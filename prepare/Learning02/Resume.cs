@@ -13,7 +13,7 @@ public class Resume
         foreach (var job in Jobs)
         {
             job.Display();
-            Console.WriteLine(); // Add a line break between job entries
+            Console.WriteLine();
         }
     }
 }
