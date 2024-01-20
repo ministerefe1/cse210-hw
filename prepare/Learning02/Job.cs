@@ -2,13 +2,20 @@ using System;
 
 public class Job
 {
-    public string JobTitle { get; set; }
-    public string Company { get; set; }
-    public int StartYear { get; set; }
-    public int EndYear { get; set; }
+    // Public fields
+    public string _company;
+    public string _jobTitle;
+    public int _startYear;
+    public int _endYear;
+    
 
-    public void Display()
+    // Method to display job information
+    public void DisplayJobInfo()
     {
-        Console.WriteLine($"{JobTitle} ({Company}) {StartYear}-{EndYear}");
+
+        Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
     }
+
+    
 }
+

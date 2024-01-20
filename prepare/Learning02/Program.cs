@@ -1,34 +1,49 @@
 using System;
-using System.Collections.Generic;
 
 class Program
 {
+    
     static void Main(string[] args)
     {
-        Job job1 = new Job
+        Console.WriteLine("Hello Learning02 World!");
+
+        // Create a new instance of 'job' class
+        Job job1 = new Job();
+
+        // Add attributes to 'job1' fields
+        job1._jobTitle = "Software Engineer";
+        job1._company = "Microsoft";
+        job1._startYear = 2019;
+        job1._endYear = 2022;
+
+        // Create a new instance of 'job' class
+        Job job2 = new Job();
+
+        // Add attributes to 'job1' fields
+        job2._jobTitle = "Manager";
+        job2._company = "Apple";
+        job2._startYear = 2022;
+        job2._endYear = 2023;
+
+        job1.DisplayJobInfo();
+        job2.DisplayJobInfo();
+
         {
-            JobTitle = "Software Engineer",
-            Company = "Microsoft",
-            StartYear = 2019,
-            EndYear = 2022
-        };
+            // Create new instance of 'Resume' class
+            Resume resume = new Resume();
 
-        Job job2 = new Job
-        {
-            JobTitle = "Manager",
-            Company = "Apple",
-            StartYear = 2022,
-            EndYear = 2023
-        };
+            // Add attributes to 'resume' fields
+            // Add attributes to 'job1' fields
+            resume._personName = "Allison Rose";   
 
-        Resume myResume = new Resume
-        {
-            Name = "Efe Enahoro"
-        };
+            resume._jobsList.Add(job1);
+            resume._jobsList.Add(job2);
 
-        myResume.Jobs.Add(job1);
-        myResume.Jobs.Add(job2);
+            resume.DisplayResume();
 
-        myResume.Display();
+        }
+
     }
+        
+        
 }
