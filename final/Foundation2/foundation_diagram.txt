@@ -1,0 +1,149 @@
+<!-- Youtube Video Tracking Diagram -->
++-------------------------+
+|         Video           |
++-------------------------+
+| - title: string         |
+| - author: string        |
+| - length: int           |
+| - comments: List<Comment>|
++-------------------------+
+| + Video(title, author, length) |
+| + AddComment(commentText, commenterName) |
+| + GetNumComments(): int |
+| + DisplayInfo() |
++-------------------------+
+
++-------------------------+
+|         Comment         |
++-------------------------+
+| - commentText: string   |
+| - commenterName: string |
++-------------------------+
+| + Comment(commentText, commenterName) |
+| + CommentText: string {get} |
+| + CommenterName: string {get} |
++-------------------------+
+
++-------------------------+
+|         Program         |
++-------------------------+
+| + Main()                |
++-------------------------+
+
+
+<!-- #Diagram for encapsulation -->
++-------------------+       +---------------------+        +----------------------+
+|      Address      |       |      Customer       |        |       Product        |
++-------------------+       +---------------------+        +----------------------+
+| - street: string   |       | - name: string      |        | - name: string        |
+| - city: string     |       | - address: Address  |        | - productId: string   |
+| - state: string    |       |                     |        | - pricePerUnit: decimal|
+| - country: string  |       |                     |        | - quantity: int       |
++-------------------+       +---------------------+        +----------------------+
+| + Address(street,   |       | + Customer(name,   |        | + Product(name,       |
+|   city, state,      |       |   address)          |        |   productId,          |
+|   country)          |       | + isInUSA(): bool   |        |   pricePerUnit,       |
+| + isInUSA(): bool   |       | + getCustomerName():|        |   quantity)           |
+| + getAddressString():|       |   string            |        | + getTotalCost():     |
+|   string            |       | + getCustomerAddress():|     |   decimal              |
++-------------------+       |   string            |        +----------------------+
+                            +---------------------+
+                                    |
+                                    |
+                                    v
+                             +----------------------+
+                             |         Order        |
+                             +----------------------+
+                             | - products: List<Product>|
+                             | - customer: Customer     |
+                             +----------------------+
+                             | + Order(customer)         |
+                             | + addProduct(product)    |
+                             | + calculateTotalCost():  |
+                             |   decimal                |
+                             | + getPackingLabel():     |
+                             |   string                 |
+                             | + getShippingLabel():    |
+                             |   string                 |
+                             +----------------------+
+
+<!-- Event Planning Diagram -->
+
++----------------+     +--------------+     +-----------+     +---------------------+
+|    Address     |     |    Event     |     |  Lecture  |     | Reception/OutdoorGathering |
++----------------+     +--------------+     +-----------+     +---------------------+
+| - street       |     | - title      |     | - speaker |     | - rsvpEmail/weatherForecast |
+| - city         |     | - description|     | - capacity|     +---------------------------+
+| - state        |     | - date       |     +-----------+        |
+| - country      |     | - time       |        |                |
+|                |     | - address    |        |                |
+| + GetAddress() |     | + GetDetails() |        |                |
++----------------+     | + GetFullDetails()|      |                |
+                       | + GetShortDescription() |                |
+                       +------------------------+                |
+                                                                   |
+                                                                   |
++----------------+                                                 |
+|    Program     |                                                 |
++----------------+                                                 |
+| + Main()       |                                                 |
++----------------+                                                 |
+| Create addresses/events                                         |
+| Display marketing messages                                      |
++------------------------------------------------------------------+
+
+<!-- Exercise Tracking Diagram -->
+
++---------------+
+|   Activity    |
++---------------+
+| - date        |
+| - lengthInMin |
++---------------+
+| + GetDistance()|
+| + GetSpeed()   |
+| + GetPace()    |
+| + GetSummary() |
++---------------+
+          |
+          |
++------------------+
+|     Running      |
++------------------+
+| - distance       |
++------------------+
+| + GetDistance()   |
+| + GetSpeed()      |
+| + GetPace()       |
++------------------+
+          |
+          |
++------------------------+
+| StationaryBicycle      |
++------------------------+
+| - speed                |
++------------------------+
+| + GetDistance()         |
+| + GetSpeed()            |
+| + GetPace()             |
++------------------------+
+          |
+          |
++------------------------+
+|      Swimming          |
++------------------------+
+| - laps                 |
++------------------------+
+| + GetDistance()         |
+| + GetSpeed()            |
+| + GetPace()             |
++------------------------+
+          |
+          |
++-------------------------+
+|        Program          |
++-------------------------+
+| - activities: List<Activity>|
++-------------------------+
+| + Main()                |
++-------------------------+
